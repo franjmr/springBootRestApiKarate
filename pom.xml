@@ -9,18 +9,31 @@
 		<relativePath/>
 	</parent>
 	<groupId>github.franjmr</groupId>
-	<artifactId>procedures</artifactId>
+	<artifactId>springbootapirestkarate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>procedures</name>
+	<name>restapikarate</name>
 	<description>Java Spring Boot Rest Api tested Karate</description>
+	
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+
 	<dependencies>
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-databind</artifactId>
+    		<version>2.11.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,7 +45,26 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+        	<groupId>com.oracle</groupId>
+        	<artifactId>ojdbc7</artifactId>
+        	<version>12.1.0</version>
+        	<scope>system</scope>
+        	<systemPath>C:/ojdbc7-12.1.0.2.jar</systemPath>
+    	</dependency>	
+    	<dependency>
+        	<groupId>org.hibernate</groupId>
+        	<artifactId>hibernate-validator</artifactId>
+        	<version>5.4.1.Final</version>
+    	</dependency>
+    	<dependency>
+        	<groupId>org.hibernate</groupId>
+        	<artifactId>hibernate-entitymanager</artifactId>
+        	<version>5.2.10.Final</version>
+    	</dependency>
+    	
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -41,4 +73,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
