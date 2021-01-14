@@ -1,8 +1,8 @@
-package com.zara.procedures.controllers;
+package com.franjmr.restapikarate.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.zara.procedures.models.ProcedureUpdateContacts;
-import com.zara.procedures.utils.*;
+import com.franjmr.restapikarate.models.ProcedureUpdateContacts;
+import com.franjmr.restapikarate.utils.*;
 
 import javax.persistence.StoredProcedureQuery;
 import javax.validation.Valid;
@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-//import com.zara.procedures.services.EmployeeContactsServiceImplementation;
+//import com.franjmr.restapikarate.services.EmployeeContactsServiceImplementation;
 
 
 @RequestMapping(ApplicationConstants.API_VERSION + "/contact")

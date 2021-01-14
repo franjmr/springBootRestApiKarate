@@ -1,4 +1,4 @@
-package com.zara.procedures.models;
+package com.franjmr.restapikarate.models;
 
 import javax.persistence.*;
 import javax.persistence.Id;
@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @NamedStoredProcedureQuery(
-    	name = "POL_ActualizaDatosContacto",
-        procedureName = "ENLACES_PKG_ZARA_META4.POL_ActualizaDatosContacto",
+    	name = "ActualizaDatosContacto",
+        procedureName = "PKG_FRANJRM.ActualizaDatosContacto",
         parameters = {
           @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoEmpleado", type = String.class),
           @StoredProcedureParameter(mode = ParameterMode.IN, name = "PTelefonoFijo", type = String.class),

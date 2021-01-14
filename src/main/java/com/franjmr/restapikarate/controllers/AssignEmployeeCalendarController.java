@@ -1,9 +1,9 @@
-package com.zara.procedures.controllers;
+package com.franjmr.restapikarate.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.zara.procedures.models.ProcedureAssignCalendar;
-import com.zara.procedures.utils.*;
+import com.franjmr.restapikarate.models.ProcedureAssignCalendar;
+import com.franjmr.restapikarate.utils.*;
 import javax.persistence.*;
 import javax.validation.Valid;
 

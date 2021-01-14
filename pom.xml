@@ -12,7 +12,7 @@
 	<artifactId>springbootapirestkarate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>procedures</name>
+	<name>restapikarate</name>
 	<description>Java Spring Boot Rest Api tested Karate</description>
 	
 	<properties>

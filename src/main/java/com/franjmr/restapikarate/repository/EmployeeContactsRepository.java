@@ -1,4 +1,4 @@
-package com.zara.procedures.repository;
+package com.franjmr.restapikarate.repository;
 
 import javax.persistence.StoredProcedureQuery;
 

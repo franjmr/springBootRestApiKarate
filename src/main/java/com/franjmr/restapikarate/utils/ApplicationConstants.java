@@ -1,4 +1,4 @@
-package com.zara.procedures.utils;
+package com.franjmr.restapikarate.utils;
 
 public class ApplicationConstants extends BaseApplicationConstants {
 

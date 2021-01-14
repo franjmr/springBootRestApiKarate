@@ -1,7 +1,7 @@
-package com.zara.procedures.services;
+package com.franjmr.restapikarate.services;
 
 import org.springframework.stereotype.Service;
-import com.zara.procedures.repository.EmployeeContactsRepository;
+import com.franjmr.restapikarate.repository.EmployeeContactsRepository;
 
 @Service
 public class EmployeeContactsServiceImplementation implements EmployeeContactsService {

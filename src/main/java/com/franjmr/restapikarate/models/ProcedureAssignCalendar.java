@@ -1,4 +1,4 @@
-package com.zara.procedures.models;
+package com.franjmr.restapikarate.models;
 
 import javax.persistence.*;
 
@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @NamedStoredProcedureQuery(
-    	name = "POL_AsignacionCalendario",
-        procedureName = "ENLACES_PKG_ZARA_META4.POL_AsignacionCalendario",
+    	name = "AsignacionCalendario",
+        procedureName = "PKG_FRANJRM.AsignacionCalendario",
         parameters = {
           @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoEmpleado", type = String.class),
           @StoredProcedureParameter(mode = ParameterMode.IN, name = "PFechaInicio", type = String.class),
