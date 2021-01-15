@@ -1,35 +1,34 @@
 package com.franjmr.restapikarate.models;
 
 import javax.persistence.*;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.franjmr.restapikarate.utils.ApplicationConstants;
 
 @Entity
 @NamedStoredProcedureQuery(
-    	name = "AsignacionCalendario",
-        procedureName = "PKG_FRANJRM.AsignacionCalendario",
-        parameters = {
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoEmpleado", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PFechaInicio", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PFechaFin", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCalendario1", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCalendario2", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCalendario3", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PSecuencia", type = Number.class),	
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSCodigoError", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSDescripcionError", type = String.class)
-        }
+	name = ApplicationConstants.PROCEDURE_NAMES.ASSIGN_CALENDAR,
+    procedureName = ApplicationConstants.PROCEDURE_PACKAGE+"."+ApplicationConstants.PROCEDURE_NAMES.ASSIGN_CALENDAR,
+    parameters = {
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CODIGO_EMPLEADO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_FECHA_INICIO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_FECHA_FIN, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CALENDARIO_1, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CALENDARIO_2, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CALENDARIO_3, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_SECUENCIA, type = Integer.class),	
+      @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_CODIGO_ERROR, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_DESCRIPCION_ERROR, type = String.class)
+    }
 )
 
 public class ProcedureAssignCalendar {
-	@JsonProperty("PCodigoEmpleado") private @Id String PCodigoEmpleado;
+	@JsonProperty(ApplicationConstants.PROCEDURE_PARAMS.P_CODIGO_EMPLEADO) private @Id String PCodigoEmpleado;
 	@JsonProperty("PFechaInicio") private String PFechaInicio;
 	@JsonProperty("PFechaFin") private String PFechaFin;
 	@JsonProperty("PCalendario1") private String PCalendario1;
 	@JsonProperty("PCalendario2") private String PCalendario2;
 	@JsonProperty("PCalendario3") private String PCalendario3;
-	@JsonProperty("PSecuencia") private Number PSecuencia;
+	@JsonProperty("PSecuencia") private Integer PSecuencia;
 	@JsonProperty("PSCodigoError") private String PSCodigoError;
 	@JsonProperty("PSDescripcionError") private String PSDescripcionError;
 	
@@ -87,7 +86,7 @@ public class ProcedureAssignCalendar {
 		return PSecuencia;
 	}
 
-	public void setPSecuencia(Number pSecuencia) {
+	public void setPSecuencia(Integer pSecuencia) {
 		PSecuencia = pSecuencia;
 	}
 	
