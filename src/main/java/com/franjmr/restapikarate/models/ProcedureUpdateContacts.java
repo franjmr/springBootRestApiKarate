@@ -1,25 +1,24 @@
 package com.franjmr.restapikarate.models;
 
 import javax.persistence.*;
-import javax.persistence.Id;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.franjmr.restapikarate.utils.ApplicationConstants;
 
 
 @Entity
 @NamedStoredProcedureQuery(
-    	name = "ActualizaDatosContacto",
-        procedureName = "PKG_FRANJRM.ActualizaDatosContacto",
-        parameters = {
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoEmpleado", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PTelefonoFijo", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PTelefonoMovil", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PEMail", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PTipoDomicilio", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoDomicilio", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSCodigoError", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSDescripcionError", type = String.class)
-        }
+	name = ApplicationConstants.PROCEDURE_NAMES.UPDATE_CONTACTS,
+    procedureName = ApplicationConstants.PROCEDURE_PACKAGE+"."+ApplicationConstants.PROCEDURE_NAMES.UPDATE_CONTACTS,
+    parameters = {
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CODIGO_EMPLEADO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_TELEFONO_FIJO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_TELEFONO_MOVIL, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_EMAIL, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_TIPO_DOMICILIO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CODIGO_DOMICILIO, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_CODIGO_ERROR, type = String.class),
+      @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_DESCRIPCION_ERROR, type = String.class)
+    }
 )
 
 public class ProcedureUpdateContacts {

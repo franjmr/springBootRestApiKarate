@@ -1,22 +1,21 @@
 package com.franjmr.restapikarate.models;
 
 import javax.persistence.*;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.franjmr.restapikarate.utils.ApplicationConstants;
 
 @Entity
 @NamedStoredProcedureQuery(
-    	name = "ActualizacionTurno",
-        procedureName = "PKG_FRANJRM.POL_ActualizacionTurno",
-        parameters = {
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PCodigoEmpleado", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PFechaInicio", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PFechaFin", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.IN, name = "PTurno", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSCodigoError", type = String.class),
-          @StoredProcedureParameter(mode = ParameterMode.INOUT, name = "PSDescripcionError", type = String.class)
-        }
+	name = ApplicationConstants.PROCEDURE_NAMES.UPDATE_WORKSHIFT,
+	procedureName = ApplicationConstants.PROCEDURE_PACKAGE+"."+ApplicationConstants.PROCEDURE_NAMES.UPDATE_WORKSHIFT,
+	parameters = {
+	  @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_CODIGO_EMPLEADO, type = String.class),
+	  @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_FECHA_INICIO, type = String.class),
+	  @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_FECHA_FIN, type = String.class),
+	  @StoredProcedureParameter(mode = ParameterMode.IN, name = ApplicationConstants.PROCEDURE_PARAMS.P_TURNO, type = String.class),
+	  @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_CODIGO_ERROR, type = String.class),
+	  @StoredProcedureParameter(mode = ParameterMode.INOUT, name = ApplicationConstants.PROCEDURE_PARAMS.PS_DESCRIPCION_ERROR, type = String.class)
+	}
 )
 
 public class ProcedureUpdateWorkShift {
