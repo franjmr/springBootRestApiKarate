@@ -12,7 +12,7 @@
 	<artifactId>springbootapirestkarate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>restapikarate</name>
+	<name>springbootapirestkarate</name>
 	<description>Java Spring Boot Rest Api tested Karate</description>
 	
 	<properties>
@@ -87,7 +87,7 @@
 		</plugins>
 		<testResources>
 	        <testResource>
-	            <directory>src/test/java/feature</directory>
+	            <directory>src/test/java</directory>
 	            <excludes>
 	                <exclude>**/*.java</exclude>
 	            </excludes>
