@@ -1,11 +1,12 @@
 # Testing a Java Spring Boot REST API with Karate
-This project contain some examples about web service tests with the Karate framework.
+This project contain an examples about web service tests with the Karate framework.
 
 ## Karate Framework
-Karate is the only open-source tool to combine API test-automation, mocks, performance-testing and even UI automation into a single, unified framework. The BDD syntax popularized by Cucumber is language-neutral, and easy for even non-programmers. Powerful JSON & XML assertions are built-in, and you can run tests in parallel for speed.
+Karate is a tool that provide an API test-automation, mocks, performance-testing and UI automation as a framework. Use the BDD syntax and XML assertions to write the test and allow to run tests in parallel.
 
-Test execution and report generation feels like any standard Java project. But there's also a stand-alone executable for teams not comfortable with Java. You don't have to compile code. Just write tests in a simple, readable syntax - carefully designed for HTTP, JSON, GraphQL and XML. And you can mix API and UI test-automation within the same test script.
+Test execution and report generation feels like any standard Java project.
 
+## Setup
 Integrate Karate in the project using Maven as a build tool adding two dependencies to the <b>pom.xml</b> file
 ```xml
 <dependencies>
@@ -37,13 +38,14 @@ And add the surefire-plugin to the plugin section:
 </build>
 ```
 ## Karate Tests
-Tests consist of a Java class that might be recognized by the designated test framework used and a feature file that describes our interaction with the service under test.
+Tests consist of Java classes and feature files that describes our interaction with the service under test.
 
 ### Feature Files
-Karate features are written in a DSL and will be stored in src/test/java/ so that feature files and Java tests are matched by their name and package structure.
+Karate features are written in a DSL and will be stored in src/test/java/ so that feature files and Java tests are matched by their name and package structure. Example:
+- <b>Gherkin:</b>   src/test/java/employee/assingCalendar.feature
+- <b>JUnit:</b>     src/test/java/employee/EmployeeTest.java
 
-</br>
-<b>test\java\feature\assign\assign-post.feature</b>
+<b>Gherkin</b>
 
 ``` Gherkin
 Feature: Assign
@@ -59,18 +61,17 @@ Feature: Assign
 ### JUnit Integration
 All we need to do to integrate JUnit is to create a test class addressing our corresponding JUnit runner so that a minimal approach could look like the following class.
 
-</br>
-<b>test\java\feature\assing\AssignTest.java</b>
+<b>JUnit</b>
 
 ```java 
-package feature.assign;
+package employee;
 
 import com.intuit.karate.junit5.Karate;
 
-public class AssignTest {
+public class EmployeeTest {
 	@Karate.Test
-	Karate testAssing() {
-		return Karate.run("assign-post").relativeTo(getClass());
+	Karate assingCalendar() {
+		return Karate.run("assingCalendar").relativeTo(getClass());
 	}
 }
 ```
@@ -80,4 +81,14 @@ Using Maven in the command line as follows:
 
 ```cmd
 $ mvn test 
+```
+
+## Reports
+Karate uses the surefire-plugin to generate standard reports in XML format that may be processed by standard mechanisms of common integration servers. Also generate HTML files to view the tests detail in a browser.
+
+```
+target/surefire-reports
+├── employee.AssignCalendar.html
+├── employee.EmployeeTest.txt
+└── TEST-employee.EmployeeTest.xml
 ```
